@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jennie Chuu's Portfolio</title>
+        <style type="text/css">
+            * {
+                text-decoration: none;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #F5ECE0;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+            }
+            .navbar {
+                background-color: #F7DCB9;
+                font-family: "Papyrus", fantasy;
+                padding: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100%;
+            }
+            .logo {
+                font-size: 50px;
+                font-weight: 600;
+                color: black;
+            }
+            .nav-buttons {
+                display: flex;
+                gap: 100px;
+            }
+            button {
+                background-color: #DEAC80;
+                border-radius: 10px;
+                padding: 15px;
+                width: 120px;
+                border: none;
+                transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            }
+            button a {
+                color: white;
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            /* Button Hover & Click Animation */
+            button:hover {
+                transform: scale(1.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+            button:active {
+                transform: scale(0.9);
+            }
+
+            /* Service Heading Style */
+            .service-heading {
+                text-align: center;
+                font-size: 40px;
+                color: #333;
+                margin-top: 40px;
+                font-family: "Papyrus", fantasy;
+                letter-spacing: 2px;
+            }
+
+            /* Service Section */
+            .services-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+                margin: 50px 10%;
+            }
+
+            .service-card {
+                background-color: #DEAC80;
+                padding: 20px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .service-icon {
+                font-size: 50px;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .service-title {
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 15px;
+            }
+
+            .service-description {
+                font-size: 16px;
+                color: #444;
+                line-height: 1.6;
+            }
+
+            /* Image Style */
+            .image-container {
+                text-align: center;
+                margin: 40px 0;
+            }
+
+            .image-container img {
+                width: 80%; /* Adjust based on your preferred size */
+                max-width: 500px;
+                border-radius: 15px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">Jennie Chuu</div>
+            <div class="nav-buttons">
+                <button><a href="http://127.0.0.1:5500/Portfolio%20Website.html">About me</a></button>
+                <button><a href="http://127.0.0.1:5500/Service.html">Services</a></button>
+                <button><a href="http://127.0.0.1:5500/project.html">Project</a></button>
+                <button><a href="http://127.0.0.1:5500/hire.html">Hire</a></button>
+            </div>
+        </nav>
+
+        <!-- Service Section -->
+        <div class="service-heading">
+            <h1>Services</h1>
+        </div>
+
+        <!-- Display Image -->
+        <div class="image-container">
+            <img src="pic1.1.jpg" alt="ArtzwSeng Image">
+        </div>
+
+        <div class="services-container">
+            <!-- Service 1: Custom Clothing -->
+            <div class="service-card">
+                <div class="service-icon">👗</div>
+                <div class="service-title">Custom Clothing</div>
+                <div class="service-description">
+                    I design unique and custom-made clothing tailored to your style and measurements, from special events to everyday wear.
+                </div>
+            </div>
+
+            <!-- Service 2: Fashion Consulting -->
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <div class="service-title">Fashion Consulting</div>
+                <div class="service-description">
+                    Need advice on your wardrobe or finding the right style? I offer fashion consulting to elevate your look and confidence.
+                </div>
+            </div>
+
+            <!-- Service 3: Brand Identity -->
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <div class="service-title">Brand Identity</div>
+                <div class="service-description">
+                    From logos to complete visual identities, I help create a cohesive and impactful brand image that resonates with your audience.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

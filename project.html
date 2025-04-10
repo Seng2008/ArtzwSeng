@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jennie Chuu's Portfolio</title>
+        <style type="text/css">
+            * {
+                text-decoration: none;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #F5ECE0;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+            }
+            .navbar {
+                background-color: #F7DCB9; 
+                font-family: "Papyrus", fantasy; 
+                padding: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100%;
+            }
+            .logo {
+                font-size: 50px; 
+                font-weight: 600; 
+                color: black;
+            }
+            .nav-buttons {
+                display: flex;
+                gap: 100px;
+            }
+            button {
+                background-color: #DEAC80;
+                border-radius: 10px; 
+                padding: 15px; 
+                width: 100px;
+                border: none;
+                transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            }
+            button a {
+                color: white; 
+                font-weight: bold; 
+                font-size: 14px;
+            }
+
+            /* Button Hover & Click Animation */
+            button:hover {
+                transform: scale(1.1); /* Slight pop-out effect */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+            button:active {
+                transform: scale(0.9); /* Slight shrink when clicked */
+            }
+
+            /* Fade-in Animation */
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">Jennie Chuu</div> 
+            <div class="nav-buttons"> 
+                <button><a href="http://127.0.0.1:5500/Portfolio%20Website.html">About me</a></button>
+                <button><a href="http://127.0.0.1:5500/Service.html">Services</a></button>
+                <button><a href="http://127.0.0.1:5500/project.html">Project</a></button>
+                <button><a href="http://127.0.0.1:5500/hire.html">Hire</a></button> 
+
+            </div> 
+        </nav>
+
+
+    </body>
+</html>

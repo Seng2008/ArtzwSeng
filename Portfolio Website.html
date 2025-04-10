@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jennie Chuu's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style type="text/css">
+        * {
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            --color: #E1E1E1;
+            background-color: #F3F3F3;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+            background-size: 55px 55px;
+        }
+
+        .navbar {
+            background-color: rgba(247, 220, 185, 0.8);
+            border: 1px solid #0E1822;
+            font-family: 'Papyrus', fantasy;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .logo {
+            font-size: 50px;
+            font-weight: 600;
+            color: #333;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 50px;
+            
+        }
+        button {
+            background-color: #DEAC80;
+            border-radius: 10px;
+            padding: 15px;
+            width: 120px;
+            border: none;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        button a {
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            
+        }
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            
+        }
+        button:active {
+            transform: scale(0.9);
+            
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 150px;
+            padding: 50px 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .text-container {
+            max-width: 450px;
+            border: 1px solid #0E1822;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out forwards;
+
+        }
+        .text-container h2 {
+            font-size: 30px;
+            color: #333;
+            text-align: center;
+            
+        }
+        .text-container h1 {
+            font-size: 50px;
+            font-weight: bold;
+            color: #D76C82;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            color: #D76C82;
+        }
+        .text-container p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+            
+        }
+        .image-container {
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-container img#martin {
+            width: 350px;
+            height: 350px;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            object-fit: cover;
+            padding: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .ribbon {
+            position: absolute;
+            bottom: -260px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            z-index: 10;
+        }
+        .star {
+            position: absolute;
+            bottom: -500px;
+            left: 300%;
+            transform: translateX(-50%) rotate(40deg);
+            width: 300px;
+            z-index: 10;
+        }
+
+        .star2 {
+            position: absolute;
+            bottom: -580px;
+            left: 200%;
+            transform: translateX(-50%) rotate(40deg);
+            width: 100px;
+            z-index: 10;
+        }
+        .scissors {
+            position: absolute;
+            bottom: -100px;
+            left: 300%;
+            transform: translateX(-50%) rotate(40deg);
+            width: 400px;
+            z-index: 10;
+        }
+        .dress {
+            position: absolute;
+            bottom: -260px;
+            right: 10%;
+            transform: translateX(-50%) rotate(370deg);
+            width: 500px;
+            z-index: 10;
+        }
+        .tape {
+            position: absolute;
+            top: 120%; /* Adjust the position so it aligns behind the text */
+            left: 0;
+            width: 100%;
+            z-index: 1; 
+            transform: translateY(-50%); 
+        }
+    
+        .highlight2 {
+            font-size: 100px;
+            font-family: 'Dancing Script', cursive; 
+            font-weight: bold;
+            color: #2a3b49;
+            text-align: left;
+            margin-right: 1400px;
+        }
+
+
+        .primary-button {
+            font-family: 'Ropa Sans', sans-serif;
+                /* font-family: 'Valorant', sans-serif; */
+            color: white;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 0.05rem;
+            border: 1px solid #0E1822;
+            padding: 0.8rem 2.1rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 531.28 200'%3E%3Cdefs%3E%3Cstyle%3E .shape %7B fill: %23FF4655 /* fill: %230E1822; */ %7D %3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='shape' points='415.81 200 0 200 115.47 0 531.28 0 415.81 200' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+            background-color: #f7e1c5;
+            background-size: 200%;
+            background-position: 200%;
+            background-repeat: no-repeat;
+            transition: 0.3s ease-in-out;
+            transition-property: background-position, border, color;
+            position: relative;
+            z-index: 1;
+        }
+
+        .primary-button:hover {
+            border: 1px solid #fb847d;
+            color: white;
+            background-position: 40%;
+        }
+
+        .primary-button:before {
+            content: "";
+            position: absolute;
+            background-color: #deac80;
+            width: 0.2rem;
+            height: 0.2rem;
+            top: -1px;
+            left: -1px;
+            transition: background-color 0.15s ease-in-out;
+        }
+
+        .primary-button:hover:before {
+            background-color: white;
+        }
+
+        .primary-button:hover:after {
+            background-color: white;
+        }
+
+        .primary-button:after {
+            content: "";
+            position: absolute;
+            background-color: #f5bfcd;
+            width: 0.3rem;
+            height: 0.3rem;
+            bottom: -1px;
+            right: -1px;
+            transition: background-color 0.15s ease-in-out;
+        }
+
+        .button-borders {
+            position: relative;
+            width: fit-content;
+            height: fit-content;
+        }
+
+        .button-borders:before {
+            content: "";
+            position: absolute;
+            width: calc(100% + 0.5em);
+            height: 50%;
+            left: -0.3em;
+            top: -0.3em;
+            border: 1px solid #000000;
+            border-bottom: 0px;
+                /* opacity: 0.3; */
+        }
+
+        .button-borders:after {
+            content: "";
+            position: absolute;
+            width: calc(100% + 0.5em);
+            height: 50%;
+            left: -0.3em;
+            bottom: -0.3em;
+            border: 1px solid #000000;
+            border-top: 0px;
+                /* opacity: 0.3; */
+            z-index: 0;
+        }
+
+        .shape {
+            fill: #ffffff;
+        }
+        
+        /* Timeline styling */
+        
+        .timeline {
+            display: flex;
+            justify-content: flex-end;
+            gap: 100px;
+            align-items: center;
+            margin-top: 100px;
+            width: 100%;
+            padding-right: 100px;
+        }
+        .star3 {
+            position: absolute;
+            top: 100;
+            left: 10px; 
+            width: 400px; 
+            z-index: 5;
+        }
+        .thread {
+            position: absolute;
+            top: 100;
+            left: 25px;
+            width: 200px;
+            z-index: 5;
+        }
+        
+        .logo2 {
+            position: absolute;
+            bottom: -260px;
+            left: 50%;
+            transform: translateX(-50%) rotate(360deg);
+            width: 350px;
+            height: 250
+            
+        }
+        .timeline-circle {
+            width: 50px;
+            height: 50px;
+            background-color: #D76C82;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-circle.active {
+            background-color: #9C4666;
+        }
+        .info-box {
+            position: absolute;
+            top: 70px;
+            width: 200px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1;
+        }
+        .timeline-circle.active .info-box {
+            display: block;
+        }
+        .timeline-dash {
+            width: 50px;
+            height: 5px;
+            background-color: transparent;
+            border-top: 3px dashed #D76C82;
+            margin-top: 18px;
+        }
+        .content2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 60px;
+            padding: 50px 20px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .tape {
+            position: absolute;
+            top: -100;
+            left: 0; 
+            width: 600px; 
+            z-index: -1;
+        }
+        .journey-title {
+            font-size: 10%;
+            font-family: 'Dancing Script', cursive;
+            font-weight: bold;
+            color: #2a3b49;
+            text-align: left;
+            position: relative; 
+            z-index: 1; 
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .page {
+            position: relative;
+            box-sizing: border-box;
+            max-width: 300px;
+            font-family: cursive;
+            font-size: 20px;
+            border-radius: 10px;
+            background: #fff;
+            background-image: linear-gradient(#f5f5f0 1.1rem, #ccc 1.2rem);
+            background-size: 100% 1.2rem;
+            line-height: 1.2rem;
+            padding: 1.4rem 0.5rem 0.3rem 4.5rem;
+        }
+
+        .page::before,
+        .page::after {
+            position: absolute;
+            content: "";
+            bottom: 10px;
+            width: 40%;
+            height: 10px;
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        .page::before {
+            left: 15px;
+            transform: skew(-5deg) rotate(-5deg);
+        }
+
+        .page::after {
+            right: 15px;
+            transform: skew(5deg) rotate(5deg);
+        }
+
+        .page:hover::before,
+        .page:hover::after {
+            box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+        }
+
+        .margin {
+            position: absolute;
+            border-left: 1px solid #d88;
+            height: 100%;
+            left: 3.3rem;
+            top: 0;
+        }
+        .margin2 {
+            position: absolute;
+            border-left: 1px solid #d88;
+            height: 100%;
+            left: 3.3rem;
+            top: 0;
+        }
+        .margin3 {
+            position: absolute;
+            border-left: 1px solid #d88;
+            height: 100%;
+            left: 3.3rem;
+            top: 0;
+        }
+        .margin4 {
+            position: absolute;
+            border-left: 1px solid #d88;
+            height: 100%;
+            left: 3.3rem;
+            top: 0;
+        }
+
+        .page p {
+            margin: 0;
+            text-indent: 1rem;
+            padding-bottom: 1.2rem;
+            color: black;
+            line-height: 20px;
+        }
+        .model {
+            position: absolute;
+            top: 200%;
+            left: 80%; 
+            width: 300px; 
+            z-index: 5;
+        }
+
+        .fashion {
+            position: absolute;
+            top: 100;
+            left: 80%;
+            width: 200px;
+            z-index: 5;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Jennie Chuu</div>
+        <div class="nav-buttons">
+            <button><a href="http://127.0.0.1:5500/Portfolio%20Website.html">About me</a></button>
+            <button><a href="http://127.0.0.1:5500/Service.html">Services</a></button>
+            <button><a href="http://127.0.0.1:5500/project.html">Project</a></button>
+            <button><a href="http://127.0.0.1:5500/hire.html">Hire</a></button>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="image-container">
+            <img class="ribbon" src="—Pngtree—pink ribbon bow_20690603.png" alt="Pink Ribbon">
+            <img class="star" src="star.png" alt="star">
+            <img class="star2" src="star.png" alt="star2">
+            <img class="dress" src="dress.png" alt="dress">
+            <img class="scissors" src="sccc.png" alt="scissors">
+            <img id="martin" src="output.jpg" alt="Jennie Chuu's Photo">
+        </div>
+        <div class="text-container">
+            <h2>About <span class="highlight">Me</span></h2>
+            <h1><span class="highlight">Fashion Designer</span></h1>
+            <p>
+                Hi! I'm Jennie Chuu, a dedicated <strong>Fashion Designer</strong> focused on transforming ideas into stunning, wearable art.
+                With a keen eye for aesthetics and a deep love for creativity, I specialize in crafting unique designs that blend innovation with timeless elegance.
+            </p>
+            <p>
+                From conceptual sketches to fabric selection and final production, I bring visions to life with attention to detail and a commitment to quality. 
+                Whether it's haute couture, streetwear, or custom-made pieces, my goal is to design fashion that tells a story and empowers individuals to express their style confidently.
+                <br><br>
+                Let’s connect and create something extraordinary together!
+            </p>
+        <div class="button-borders">
+            <button class="primary-button"><a href="http://127.0.0.1:5500/hire.html">Hire</a>
+            </button>
+          </div>
+        </div>
+
+    <!--//JOURNEY TIMELINE//-->
+    <img class="tape" src="tapee.png" alt="tape">
+    <div class="content2">
+        <h2 class="journey-title"><span class="highlight2">My Journey</span></h2>
+    </div>
+    <div class="timeline">
+        <img class="star3" src="star3.png" alt="star3">
+        <img class="thread" src="teath.png" alt="Thread">
+        <div class="timeline-circle" onclick="toggleInfo(1)">
+            <h3>2017</h3>
+            <div class="info-box" id="info-1">
+                <h3><span style="color:black">Discovery of Passion</span></h3>
+                <br><p><span style="color:black">I discovered my love for fashion 
+                    design during high school, experimenting with sketches and fabric designs. 
+                    I began attending local workshops to hone my skills.</span></p>
+            </div>
+        </div>
+        <div class="timeline-dash"></div>
+        <div class="timeline-circle" onclick="toggleInfo(2)">
+            <h3>2019</h3>
+            <div class="info-box" id="info-2">
+                <h3><span style="color:black"><u>Formal Education</u></span></h3>
+                <br><p><span style="color:black">Jennie enrolled in 
+                    a prestigious fashion design program, learning the 
+                    fundamentals of design, sewing, and garment construction. She interned at 
+                    a well-known fashion house, gaining practical experience.</span></p>
+            </div>
+        </div>
+        <div class="timeline-dash"></div>
+        <div class="timeline-circle" onclick="toggleInfo(3)">
+            <h3>2021</h3>
+            <div class="info-box" id="info-3">
+                <h3><span style="color:black"><u>First Collection Launch</u></span></h3>
+                <br><p><span style="color:black">After years of hard work 
+                    and dedication, I launched her first independent 
+                    fashion collection, showcasing her unique 
+                    blend of modern and classic styles. The collection was 
+                    well-received by critics and buyers.</span></p>
+            </div>
+        </div>
+        <div class="timeline-dash"></div>
+        <div class="timeline-circle" onclick="toggleInfo(4)">
+            <h3>2023</h3>
+            <div class="info-box" id="info-4">
+                <h3><span style="color:black"><u>Brand Establishment</u></span></h3>
+                <br><p><span style="color:black">I founded my 
+                    own fashion label, “Chuu Elegance,” focusing on 
+                    sustainable and inclusive fashion. The brand quickly 
+                    gained recognition for 
+                    its innovative designs and commitment to ethical production.</span>
+                <img class="logo2" src="chuu logo.png"  alt="Jennie Chuu's Logo" >
+                </div>
+        </div>
+        <div class="timeline-dash"></div>
+        <div class="timeline-circle" onclick="toggleInfo(5)">
+            <h3>2025</h3>
+            <div class="info-box" id="info-5">
+                <h3><span style="color:black">Global Recognition</span></h3>
+                <br><p><span style="color:black">My designs were 
+                    featured in international fashion shows, and my 
+                    label became a global sensation. I will continue to push
+                    boundaries in fashion, advocating for both creativity and 
+                    sustainability in the industry.<br>
+                    This journey highlights my growth and success as a fashion designer.</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo(step) {
+            var infoBox = document.getElementById('info-' + step);
+            if (infoBox.style.display === 'block') {
+                infoBox.style.display = 'none';
+            } else {
+                infoBox.style.display = 'block';
+            }
+        }
+    </script>
+
+<!--//Sustainability and values//-->
+    <div class="content2">
+
+        <h2 class="Journey-title"><span class="highlight2">Sustainability <br> & Values</span></h2>
+    </div>
+    <div class="page">
+        
+        <div class="margin"></div>
+        <h3>Eco-friendly Materials</h3>
+        <p>Commitment to using sustainable fabrics such as 
+            organic cotton, bamboo, and recycled materials to reduce environmental 
+            impact and promote a circular fashion economy.</p>
+      </div>
+
+      <div class="page">
+        <div class="margin2"></div>
+        <h3>Zero-Waste Production</h3>
+        <p>Designing with a focus on minimal waste, using every scrap of fabric,
+            and incorporating upcycling
+            techniques to give old garments new life.</p>
+      </div>
+
+      <div class="page">
+        <div class="margin3"></div>
+        <h3>Inclusivity</h3>
+        <p>Celebrating diversity by designing for all body types, 
+            skin tones, and cultural backgrounds, ensuring every 
+            individual feels confident and represented.</p>
+      </div>
+
+      <div class="page">
+        <div class="margin4"></div>
+        <h3>Ethical Craftsmanship</h3>
+        <p>Promoting fair trade practices, supporting artisans, and ensuring that each
+            piece is made under humane working conditions with fair wages.</p>
+      </div>
+      <img class="model" src="model.png" alt="model">
+    </div>
+<!--Achievements-->
+    <div class="content2">
+        <h2 class="Journey-title"><span class="highlight2">Achievements & Highkights</span></h2>
+    </div>
+    <img class="fashion" src="fashion.webp" alt="fashion">
+    <h3 class="heading1">Debuted First Collection at a Local Fashion Week</h3>
+</body>
+</html>
